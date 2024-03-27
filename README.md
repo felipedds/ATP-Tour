@@ -10,6 +10,7 @@ weather-analysis/
 │   └── external/            # External datasets or data obtained from external sources
 ├── notebooks/               # Jupyter notebooks for data exploration, and analysis
 ├── src/                     # Source code
+│   ├── data_collection/     # Scripts or modules for data collection
 │   ├── data_preprocessing/  # Scripts or modules for data preprocessing
 │   ├── feature_engineering/ # Scripts or modules for feature engineering
 │   ├── modeling/            # Scripts or modules for modeling (machine learning models)
