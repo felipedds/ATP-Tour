@@ -23,11 +23,11 @@ def download_base(url, output_file):
 # List from 2002/2003 to 2024 (Actual)
 past_seasons = ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                 "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
-#actual_season = ["2324"]
+actual_season = ["2024"]
 
 #create_table_matches(league="premier_league")
 
-for season in past_seasons:
+for season in actual_season:
     url = f"http://www.tennis-data.co.uk/{season}/{season}.xls"
     output_file = f"/home/felipe/Documents/tier0/atp-tour-tennis/data/raw/atp-tour-{season}.xls"
     print(f"Downloading file from {url} to {output_file}")
