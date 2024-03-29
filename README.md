@@ -15,6 +15,7 @@ weather-analysis/
 │   ├── feature_engineering/ # Scripts or modules for feature engineering
 │   ├── modeling/            # Scripts or modules for modeling (machine learning models)
 │   └── evaluation/          # Scripts for model evaluation and performance metrics
+|   └── main.py 
 ├── reports/                 # Reports generated(HTML, PDF) from analysis and modeling
 ├── models/                  # Saved models or model artifacts
 ├── environment.yml          # Conda environment file specifying dependencies
