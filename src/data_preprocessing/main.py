@@ -100,7 +100,7 @@ def insert_data(csv_directory=CSV_DIRECTORY):
                         "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
         actual_season = ["2024"]
 
-        for season in past_seasons:
+        for season in actual_season:
             for filename in os.listdir(csv_directory):
                 print(filename)
                 if f"atp-tour-{season}" in filename:
@@ -146,8 +146,8 @@ def insert_data(csv_directory=CSV_DIRECTORY):
                         row["date"] = str(row["date"])
                         row["id"] = ''.join([row["atp"], row["date"], row["winner"], row["loser"]]).replace(" ", "").replace("'", "").replace(".", "").replace("-", "")                
                         row["season"] = season
-                        values = (row["id"], row["atp"], row["tournament"], row["date"], row["series"], row["court"], row["surface"], row["round"], row["best_of"], row["winner"], row["loser"], row["wrank"], row["lrank"], row["wpts"], row["lpts"], row["w1"], row["w2"], row["w3"], row["w4"], row["w5"], row["wsets"], row["lsets"], row["comment"], row["B365W"], row["B365L"])
-                        cursor.execute(f"INSERT OR IGNORE INTO {name_table} (id, atp, tournament, date, series, court, surface, round, best_of, winner, loser, wrank, lrank, wpts, lpts, w1, w2, w3, w4, w5, wsets, lsets, comment, B365W, B365L) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", values)
+                        values = (row["id"], row["atp"], row["tournament"], row["date"], row["season"], row["series"], row["court"], row["surface"], row["round"], row["best_of"], row["winner"], row["loser"], row["wrank"], row["lrank"], row["wpts"], row["lpts"], row["w1"], row["w2"], row["w3"], row["w4"], row["w5"], row["wsets"], row["lsets"], row["comment"], row["B365W"], row["B365L"])
+                        cursor.execute(f"INSERT OR IGNORE INTO {name_table} (id, atp, tournament, date, season, series, court, surface, round, best_of, winner, loser, wrank, lrank, wpts, lpts, w1, w2, w3, w4, w5, wsets, lsets, comment, B365W, B365L) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", values)
                     connection.commit()
                     cursor.close()
                     connection.close()
